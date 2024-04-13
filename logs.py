@@ -20,4 +20,10 @@ class CustomFormatter(logging.Formatter):
     def format(self, record):
         log_fmt = self.FORMATS.get(record.levelno)
         formatter = logging.Formatter(log_fmt)
+        
+        # Modify log message to include bandit properties
+        if hasattr(record, 'bandit'):
+            bandit_info = f"Bandit with True Win Rate {record.bandit.p} - Pulled {record.bandit.N} times - Estimated average reward: {round(record.bandit.p_estimate, 4)} - Estimated average regret: {round(record.bandit.r_estimate, 4)}"
+            record.msg = f"{record.msg}\n{bandit_info}"
+        
         return formatter.format(record)

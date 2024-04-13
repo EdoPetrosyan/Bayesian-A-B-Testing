@@ -1,0 +1,5 @@
+Bandit,Reward,Algorithm
+Bandit Arm with a Win Rate of 1,0.4280531271064035,ThompsonSampling
+Bandit Arm with a Win Rate of 2,1.1991736056511688,ThompsonSampling
+Bandit Arm with a Win Rate of 3,3.0602397725972263,ThompsonSampling
+Bandit Arm with a Win Rate of 4,4.0021865097110005,ThompsonSampling
